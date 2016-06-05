@@ -8,4 +8,8 @@ class VCityApp < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  get '/map' do
+  	send_file(ENV['MAP_FILE'])
+  end
 end
