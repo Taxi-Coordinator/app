@@ -6,6 +6,6 @@ class VCityApp < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/../public'
 
   get '/' do
-    slim :home
+    erb :index
   end
 end
