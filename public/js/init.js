@@ -172,7 +172,8 @@ if(run==true){
     cars = [];
     roads = [];
     intersections_arr = [];
-    var car_no = $("input").val();
+    //var car_no = $("input").val();
+    var car_no = 10;
     $(".car_no").html(car_no);
     for(var i=0;i<car_no;i++){
       var car = new drawcar();
@@ -259,7 +260,7 @@ if(run==true){
 
   function manual_road(){
 
-    //road1
+    //Horizontal routes
     marginY = 0
     var road = new drawroad();
     road.x = 0, road.y = 0, road.width = w, road.height = road_size;
@@ -298,6 +299,49 @@ if(run==true){
 
     var road = new drawroad();
     road.x = 0, road.y = (empty_space / 7 * 7) + marginY, road.width = w, road.height = road_size;
+    roads.push(road);
+
+    //Vertical Routs
+    empty_spaceX = w - (road_size * 7 + 120);
+    marginX = 0;
+    var road = new drawroad();
+    road.x = 0, road.y = 0, road.width = road_size, road.height = h;
+    roads.push(road);
+
+    
+    marginX = marginX + road_size 
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 2) + marginX, road.y = 0, road.width = road_size, road.height = h;
+    roads.push(road);
+
+    marginX = marginX + road_size 
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 4) + marginX, road.y = (empty_space / 7 * 4) + (road_size * 3 + 60 ), road.width = road_size, road.height = (empty_space / 7 * 3) + (road_size * 3 + 40 );
+    roads.push(road);
+
+    marginX = marginX + road_size
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 6) + marginX, road.y = 0, road.width = road_size, road.height = h;
+    roads.push(road);
+
+    marginX = marginX + road_size 
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 7) + marginX, road.y = (empty_space / 7 * 2) + (road_size * 1 + 20 ), road.width = road_size, road.height = (empty_space / 7 * 2) + (road_size * 3 + 40 );
+    roads.push(road);
+
+    marginX = marginX + road_size
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 8) + marginX, road.y = 0, road.width = road_size, road.height = h;
+    roads.push(road);
+
+    marginX = marginX + road_size 
+    var road = new drawroad();
+    road.x = (empty_spaceX / 14 * 12) + marginX, road.y = 0, road.width = road_size, road.height = h;
+    roads.push(road);
+
+    marginX = marginX + road_size 
+    var road = new drawroad();
+    road.x = (w - road_size), road.y = 0, road.width = road_size, road.height = h;
     roads.push(road);
     
     // var road = new drawroad();
