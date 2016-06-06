@@ -1,7 +1,6 @@
-# Key Sharer App
+# Vcity app
 
 ## Endpoint
   
- [https://key-sharer.herokuapp.com/] (https://key-sharer.herokuapp.com/)
 
-Allows users To share credentials to other users
+Viewer of traffic simulator
