@@ -155,8 +155,14 @@ if(run==true){
       console.log("browser not supported for dashed lines");
     }
   }
+  var height = 830
+
+
+  var road_size = 50;
+  var vertical_roads = 6;  
+  var empty_space = height - (vertical_roads * road_size + 100);
+  var w = $('.viewer').width(), h = height;
   
-  var w = $('.viewer').width(), h = 830;
   canvas.width = w;
   canvas.height = h;
   var roads = [], intersections_arr = [], cars = [];
@@ -204,42 +210,170 @@ if(run==true){
       cars.push(car);	
     }
     
-    //road1
-    var road = new drawroad();
-    road.x = 0, road.y = ((h/2)-40), road.width = w, road.height = 80;
-    roads.push(road);
+    // //road1
+    // var road = new drawroad();
+    // road.x = 0, road.y = ((h/2)-40), road.width = w/3, road.height = 80;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = w/3, road.y = ((h/2)-40), road.width = w/3, road.height = 80;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = w/3 * 2, road.y = ((h/2)-40), road.width = w/3, road.height = 80;
+    // roads.push(road);
     
-    //road2
-    var road = new drawroad();
-    road.x = ((w/2)-40), road.y = 0, road.width = 80, road.height = h;
-    roads.push(road);
+    // //road2
+    // var road = new drawroad();
+    // road.x = ((w/2)-40), road.y = 0, road.width = 80, road.height = h;
+    // roads.push(road);
     
-    //road3
-    var road = new drawroad();
-    road.x = 0, road.y = 200, road.width = w, road.height = 40;
-    roads.push(road);
+    // //road3
+    // var road = new drawroad();
+    // road.x = 0, road.y = 200, road.width = w, road.height = 40;
+    // roads.push(road);
     
-    //road4
-    var road = new drawroad();
-    road.x = 1050, road.y = ((h/2)-40), road.width = 40, road.height = (h - ((h/2)-40));
-    roads.push(road);
+    // //road4
+    // var road = new drawroad();
+    // road.x = 1050, road.y = ((h/2)-40), road.width = 40, road.height = (h - ((h/2)-40));
+    // roads.push(road);
     
-    //road5
-    var road = new drawroad();
-    road.x = 450, road.y = 200, road.width = 40, road.height = h - 200;
-    roads.push(road);
+    // //road5
+    // var road = new drawroad();
+    // road.x = 450, road.y = 200, road.width = 40, road.height = h - 200;
+    // roads.push(road);
     
-    //road6
-    var road = new drawroad();
-    road.x = 120, road.y = 0, road.width = 80, road.height = h;
-    roads.push(road);
+    // //road6
+    // var road = new drawroad();
+    // road.x = 120, road.y = 0, road.width = 80, road.height = h;
+    // roads.push(road);
     
-    //road7
-    var road = new drawroad();
-    road.x = 0, road.y = ((h/2)+240), road.width = w, road.height = 40;
-    roads.push(road);
+    // //road7
+    // var road = new drawroad();
+    // road.x = 0, road.y = ((h/2)+240), road.width = w, road.height = 40;
+    // roads.push(road);
     
+    manual_road();
     intersections();
+  }
+
+  function manual_road(){
+
+    //road1
+    marginY = 0
+    var road = new drawroad();
+    road.x = 0, road.y = 0, road.width = w, road.height = road_size;
+    roads.push(road);
+
+    marginY = marginY + road_size + 20
+
+    var road = new drawroad();
+    road.x = 0, road.y = (empty_space / 7 * 2) + marginY, road.width = w, road.height = road_size;
+    roads.push(road);
+
+
+    marginY = marginY + road_size + 20
+
+
+    var road = new drawroad();
+    road.x = 0, road.y = (empty_space / 7 * 3) + marginY, road.width = w, road.height = road_size;
+    roads.push(road);
+
+    marginY = marginY + road_size + 20
+
+
+    var road = new drawroad();
+    road.x = 0, road.y = (empty_space / 7 * 4) + marginY, road.width = w, road.height = road_size;
+    roads.push(road);
+
+    marginY = marginY + road_size + 20
+
+
+    var road = new drawroad();
+    road.x = 0, road.y = (empty_space / 7 * 5) + marginY , road.width = w, road.height = road_size;
+    roads.push(road);
+
+    marginY = marginY + road_size + 20
+
+
+    var road = new drawroad();
+    road.x = 0, road.y = (empty_space / 7 * 7) + marginY, road.width = w, road.height = road_size;
+    roads.push(road);
+    
+    // var road = new drawroad();
+    // road.x = 0, road.y = (3*(h-(rw*2)))/7 + rw, road.width = w, road.height = rw;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = 0, road.y = (4*(h-(rw*3)))/7 + (rw*2), road.width = w, road.height = rw;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = 0, road.y = (5*(h-(rw*4)))/7 + (rw*3), road.width = w, road.height = rw;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = 0, road.y = (7*(h-(rw*5)))/7 + (rw*4), road.width = w, road.height = rw;
+    // roads.push(road);
+
+    // ////////
+    // var marginX = 0;
+
+    // var road = new drawroad();
+    // road.x = 0, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // marginX += rw + 10;
+
+    // var road = new drawroad();
+    // road.x = 2*(w-marginX)/14, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // marginX += rw + 20;
+
+    // var road = new drawroad();
+    // road.x = 4*(w-marginX)/14, road.y = (4*(h-(rw*3)))/7 + (rw*2), road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // marginX += rw + 20;
+
+    // var road = new drawroad();
+    // road.x = 6*(w-marginX)/14, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // marginX += rw + 20;
+    // //
+    // var road = new drawroad();
+    // road.x = 7*(w-marginX)/14, road.y = (2*(h-(rw)))/7, road.width = rw, road.height = 2*h/7 + rw;
+    // roads.push(road);
+
+    // marginX += rw + 20;
+
+    // var road = new drawroad();
+    // road.x = 8*(w-marginX)/14, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // marginX += rw + 20;
+
+    // var road = new drawroad();
+    // road.x = 12*(w-marginX)/14, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+
+    // var road = new drawroad();
+    // road.x = w-rw, road.y = 0, road.width = rw, road.height = h;
+    // roads.push(road);
+ 
+
+
+
+  }
+
+  function get_road_map(){
+
+  }
+
+  function create_city(){
+
   }
   
   function drawscene(){
