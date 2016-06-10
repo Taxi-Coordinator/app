@@ -417,8 +417,42 @@ if(run==true){
   }
 
   function initTimePicker(){
-      $('input.timepicker').timepicker({});
+      $('input.timepicker').timepicker({
+        timeFormat: 'HH:mm:ss',
+        minTime: '00:00:00',
+        maxHour: 20,
+        maxMinutes: 30,
+        startTime: new Date(0,0,0,7,0,0), 
+        interval: 60// 15 minutes
+        });
   }
+
+  function onClickStart(){
+    $( "#btnStart" ).click(function() {
+      var element = $('input.timepicker').timepicker();
+      var time = element.format(element.getTime());
+      
+      //Call controller
+      $.ajax({
+        type: "POST",
+        url: "/start",
+        data: {
+          time: time
+        }
+      }).done(function() {
+        console.log("Task started");
+      });
+
+    });
+  }
+
+  function onClickStop(){
+    $( "#btnStop" ).click(function() {
+      alert( "Handler for .click() called." );
+    });
+  }
+
+  
 
   function create_city(){
 
@@ -1561,5 +1595,7 @@ if(run==true){
   }
   init();
   initTimePicker();
+  onClickStart();
+  onClickStop();
   animloop();
 }

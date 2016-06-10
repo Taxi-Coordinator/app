@@ -1,4 +1,5 @@
 config_env do
   set 'MAP_FILE', ''
   set 'OUTPUT_FILE', ''
+  set 'TIME_FILE', ''
 end

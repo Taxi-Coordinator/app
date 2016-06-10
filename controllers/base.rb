@@ -16,4 +16,9 @@ class VCityApp < Sinatra::Base
   get '/output' do 
   	send_file(ENV['OUTPUT_FILE'])
   end
+
+  post '/start' do
+  	puts 'Starting java object with time '
+  	puts params[:time]
+  end
 end
