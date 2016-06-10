@@ -416,6 +416,10 @@ if(run==true){
 
   }
 
+  function initTimePicker(){
+      $('input.timepicker').timepicker({});
+  }
+
   function create_city(){
 
   }
@@ -1556,5 +1560,6 @@ if(run==true){
       requestAnimFrame(animloop); 
   }
   init();
+  initTimePicker();
   animloop();
 }
