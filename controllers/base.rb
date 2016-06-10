@@ -12,4 +12,8 @@ class VCityApp < Sinatra::Base
   get '/map' do
   	send_file(ENV['MAP_FILE'])
   end
+
+  get '/output' do 
+  	send_file(ENV['OUTPUT_FILE'])
+  end
 end
