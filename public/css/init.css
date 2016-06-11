@@ -59,3 +59,27 @@ input[type="range"]::-webkit-slider-thumb{
   left: 45px;
   color: #fff;
 }
+
+#console p {
+  padding: 4px 10px;
+  margin: 0;
+}
+
+#console {
+  margin: 0 auto;
+  text-align: left;
+  background: black;
+  color: white;
+  font-size: smaller;
+}
+
+#final-output{
+  text-align: left;
+}
+
+
+#output{
+  height: 600px;
+      max-height: 600px;
+    overflow-y: scroll;
+}

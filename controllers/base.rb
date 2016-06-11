@@ -18,7 +18,7 @@ class VCityApp < Sinatra::Base
   end
 
   post '/start' do
-  	puts 'Starting java object with time '
-  	puts params[:time]
+  	# Write to file
+  	File.write(ENV['TIME_FILE'], params[:time])
   end
 end

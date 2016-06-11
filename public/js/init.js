@@ -1593,9 +1593,13 @@ if(run==true){
       drawscene();
       requestAnimFrame(animloop); 
   }
+  function initOutputFile(){
+    $('#output').logViewer({logUrl: '/ouptu'});
+  }
   init();
   initTimePicker();
   onClickStart();
   onClickStop();
+  //initOutputFile();
   animloop();
 }
